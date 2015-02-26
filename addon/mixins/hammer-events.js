@@ -143,13 +143,14 @@ export default Ember.Mixin.create({
 
     /* Hack to get doubletap working. Not sure how best to integrate this.
      * Currently there's not a distinction between recognizers and events they
-     * recognize. In the case of doubletap, it's necessary to have two TapRecognizers,
-     * one that recongnizes single taps and one that recognizes doubletaps. Furthermore,
-     * the doubletap TapRecognizer, must be configured to simultaneously recognize with
-     * the tap TapRecognizer. What I do below is a hack to show how doubletap can be made
-     * to work. A better solution would be to let the user configure the events (s)he
-     * wants to recognize and this method would then need to understand how those events
-     * map onto recognizers. But currently the `use` and the `forEach` loop just above
+     * recognize. In the case of doubletap, it's necessary to have two
+     * TapRecognizers, one that recongnizes single taps and one that recognizes
+     * doubletaps. Furthermore, the doubletap TapRecognizer, must be configured
+     * to simultaneously recognize with the tap TapRecognizer. What I do below
+     * is a hack to show how doubletap can be made to work. A better solution
+     * would be to let the user configure the events (s)he wants to recognize
+     * and this method would then need to understand how those events map onto
+     * recognizers. But currently the `use` and the `forEach` loop just above
      * assumes a one-to-one mapping.
      */
     var doubleTapOptions = {'event': 'doubletap', 'taps': 2};
