@@ -19,6 +19,20 @@ export default Ember.LinkView.reopen({
       this.on('press', this, this._invoke);
     }
 
+  },
+
+  __bustClick: function(ev) {
+    ev.preventDefault();
+  },
+
+  didInsertElement: function() {
+    this.$().on('click.ember-mobiletouch', this.__bustClick);
+    this._super();
+  },
+
+  willDestroyElement: function() {
+    this.$().off('click.ember-mobiletouch');
+    this._super();
   }
 
 });
