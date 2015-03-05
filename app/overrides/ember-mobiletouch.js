@@ -12,8 +12,8 @@ var overrides = function() {
     var mobileTouchConfig = { _mobileTouchConfig : config.mobileTouch || {} };
 
     // modify the dispatcher
-    Ember.EventDispatcher.reopen(mobileTouchConfig);
-    Ember.EventDispatcher.reopen(HammerEvents);
+//    Ember.EventDispatcher.reopen(mobileTouchConfig);
+//    Ember.EventDispatcher.reopen(HammerEvents);
 
     //components extend Ember.View, so this should be all that's needed
     Ember.View.reopen(GesturesMixin, {
